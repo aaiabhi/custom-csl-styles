@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>Custom IEEE with Pages, Volume, Issue, Year, DOI</title>
+    <id>http://www.zotero.org/styles/custom-ieee-pviyd</id>
+    <link href="http://www.zotero.org/styles/custom-ieee-pviyd" rel="self"/>
+    <author>
+      <name>Custom CSL by ChatGPT</name>
+    </author>
+    <category citation-format="numeric"/>
+    <category field="engineering"/>
+    <updated>2025-04-20T00:00:00+00:00</updated>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name and="text" delimiter=", " initialize-with=". " name-as-sort-order="all"/>
+      <label form="short" prefix=", " text-case="lowercase"/>
+    </names>
+  </macro>
+
+  <macro name="title">
+    <text variable="title" quotes="true" suffix=", "/>
+  </macro>
+
+  <macro name="container-title">
+    <text variable="container-title" font-style="normal" suffix=", "/>
+  </macro>
+
+  <macro name="volume-issue">
+    <group delimiter=", ">
+      <text variable="page" prefix="pp. "/>
+      <text variable="volume" prefix="vol. "/>
+      <text variable="issue" prefix="no. "/>
+      <date variable="issued">
+        <date-part name="year"/>
+      </date>
+      <text variable="DOI" prefix="doi: "/>
+    </group>
+  </macro>
+
+  <citation>
+    <layout prefix="[" suffix="]" delimiter=", ">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <bibliography>
+    <layout suffix="." delimiter=" ">
+      <text macro="author"/>
+      <text macro="title"/>
+      <text macro="container-title"/>
+      <text macro="volume-issue"/>
+    </layout>
+  </bibliography>
+</style>
